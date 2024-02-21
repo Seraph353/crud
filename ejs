@@ -1,0 +1,9 @@
+<% result.forEach(function(product) { %>   
+    <a href= "/Music/<%= product.Id %>"> See Game </a>                              
+    Id: <%= product.Id %> </br>
+    Track: <%= product.track %> </br>
+    Artist: <%= product.artist %> </br>
+    Length (Seconds): <%= product.length %> </br> </br>
+ <% }); %>
+ 
+ <a href="/add">Add a Track</a>
