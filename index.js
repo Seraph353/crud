@@ -59,8 +59,9 @@ app.post('/add', function(req,res){
     var y = req.body.artist
     var z = req.body.length
     var a = req.body.album
-    let sql = 'insert into music (track, artist, length, album) values (?,?,?,?);';
-    let query = db.query(sql,[x, y, z, a],(err,result) => {
+    var b = req.body.cover
+    let sql = 'insert into music (track, artist, length, album, cover) values (?,?,?,?,?);';
+    let query = db.query(sql,[x, y, z, a, b],(err,result) => {
         if(err) throw err;
         
         res.redirect('/')  
@@ -82,8 +83,9 @@ app.post('/add', function(req,res){
     var y = req.body.artist
     var z = req.body.length
     var a = req.body.album
-    let sql = 'UPDATE music SET track = ?, artist = ?, length = ?, album = ? where Id = ?'
-    let query = db.query(sql,[x, y, z, a, req.params.id],(err,result) => {
+    var b = req.body.cover
+    let sql = 'UPDATE music SET track = ?, artist = ?, length = ?, album = ?, cover = ? where Id = ?'
+    let query = db.query(sql,[x, y, z, a, b, req.params.id],(err,result) => {
         if(err) throw err;
         
         res.redirect('/')  

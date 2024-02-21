@@ -1,7 +1,9 @@
- <% result.forEach(function(product) { %>   
-    <a href= "/Music/<%= product.Id %>"> <%=product.track%>,</a>
-    <%= product.artist%>
-    <a href="/edit/<%= product.Id %>">Edit</a>
+<% result.forEach(function(product) { %>   
+   <div style="width:25%; display: inline-block;text-align: center; background-color: #555; min-height:200px; margin: 0px;border-radius: 10px;"
+   <br/>
+   <a href= "/Music/<%= product.Id %>"> <%=product.track%>,</a> 
+    <%= product.artist%> <br>
+    <a href="/edit/<%= product.Id %>">Edit</a> <br>
     <br/>
  <% }); %>
  <br/>
