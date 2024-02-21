@@ -1,11 +1,26 @@
-<% result.forEach(function(product) { %>   
-   <div style="width:25%; display: inline-block;text-align: center; background-color: #555; min-height:200px; margin: 0px;border-radius: 10px;"
-   <br/>
-   <a href= "/Music/<%= product.Id %>"> <%=product.track%>,</a> 
-    <%= product.artist%> <br>
-    <a href="/edit/<%= product.Id %>">Edit</a> <br>
-    <br/>
- <% }); %>
- <br/>
- <a href="/add">Add a Track</a>
- 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <% result.forEach(function(product) { %>
+      <div class="track-container">
+          <div class="track-info">
+              <a href="/Music/<%= product.Id %>"><%= product.track %>,</a> <%= product.artist %><br>
+              <!-- Add any other track information here -->
+          </div>
+          <div class="thumbnail-container">
+              <img src="<%= product.cover %>" alt="Thumbnail" class="thumbnail">
+          </div>
+          <div class="buttons">
+              <a href="/edit/<%= product.Id %>" class="edit-button">Edit</a>
+          </div>
+      </div>
+   <% }); %>
+   
+   <button class="add-button" onclick="document.location='/add'">Add a Track</button>
+   
