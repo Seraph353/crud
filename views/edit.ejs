@@ -1,3 +1,12 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Music Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <form action="/edit/<%= result[0].Id %>" method="post">
     <h1>Editing Track  "<%= result[0].track %>"</h1> 
 <input name="track" value="<%= result[0].track %>">
