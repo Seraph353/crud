@@ -1,4 +1,80 @@
 <html lang="en">
+
+<style>
+.track-container {
+    text-align: center;
+    justify-content: center;
+    width: 50%;
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(170, 170, 170);
+    margin: 10px auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+body {
+    background-color: rgb(102, 117, 156);
+}
+.track-info {
+    flex: 1;
+    text-align: left;
+    padding-right: 10px; /* Add some spacing between text and thumbnail */
+}
+
+.thumbnail-container {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    border-left: 2px solid #810000; /* Secondary border */
+    padding-left: 10px; /* Add some spacing between thumbnail and border */
+    margin-right: 10px; /* Add a gap between the thumbnail and the Edit button */
+}
+
+.thumbnail {
+    max-width: 100px; /* Set maximum width for thumbnail */
+    max-height: 400px; /* Set maximum height for thumbnail */
+    margin: auto; /* Primary border */
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the buttons vertically */
+}
+
+.edit-button, .add-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #000000;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+
+a:link {
+    background-color: #bebebe;
+  }
+  
+  a:visited {
+    background-color: #bebebe;
+  }
+  
+  a:hover {
+    background-color: #581bd1;
+  }
+  
+  a:active {
+    background-color: hotpink;
+  }
+
+  .add-button {
+    display: block;
+    margin: 20px auto;
+}
+    </style>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,13 +82,15 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-Id: <%= result[0].Id%> <br/>
-Model: <%= result[0].track%> <br/>
-Make: <%= result[0].artist%> <br/>
-Length (seconds): <%= result[0].length%> <br/><br/>
-<p> <img src="/<%= result[0].cover %>"alt="<%= result[0].cover %>" style="width:30%"/> </p>
-
-
-
-<a href="/"> Return Home</a> 
+<div class="track-container">
+    
+    Id: <%= result[0].Id%> <br/>
+    Model: <%= result[0].track%> <br/>
+    Make: <%= result[0].artist%> <br/>
+    Price (€): <%= result[0].length%> <br/><br/>
+    
+    <div class="thumbnail">
+        <img src="/<%= result[0].cover %>"alt="<%= result[0].cover %>" style="height:200px"/><br>
+    </div>
+</div>
+<button class="add-button" onclick="document.location='/'">Return Home</button> 
