@@ -60,8 +60,8 @@ app.post('/add', function(req,res){
     var z = req.body.length
     var a = req.body.album
     var b = req.body.cover
-    let sql = 'insert into music (track, artist, length, album, cover) values (?,?,?,?,?);';
-    let query = db.query(sql,[x, y, z, a, b],(err,result) => {
+    let sql = 'insert into music (track, artist, length,  cover) values (?,?,?,?);';
+    let query = db.query(sql,[x, y, z, b],(err,result) => {
         if(err) throw err;
         
         res.redirect('/')  

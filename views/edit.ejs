@@ -9,10 +9,9 @@
 
 <form action="/edit/<%= result[0].Id %>" method="post">
     <h1>Editing Track  "<%= result[0].track %>"</h1> 
-<input name="track" value="<%= result[0].track %>">
-<input name="album" value="<%= result[0].album %>">
-<input name="artist" value="<%= result[0].artist %>">
-<input name="length" value="<%= result[0].length %>">
+<input name="model" value="<%= result[0].track %>">
+<input name="make" value="<%= result[0].artist %>">
+<input name="price" value="<%= result[0].length %>">
 <input name="cover" value="<%= result[0].cover %>">
 <input type="submit" value="Edit">
 </form>
