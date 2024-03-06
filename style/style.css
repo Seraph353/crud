@@ -17,7 +17,11 @@ body {
     text-align: left;
     padding-right: 10px; /* Add some spacing between text and thumbnail */
 }
-
+.edit-info {
+    flex: 1;
+    text-align: center;
+    padding-right: 10px; /* Add some spacing between text and thumbnail */
+}
 .thumbnail-container {
     flex: 0 0 auto;
     display: flex;
@@ -68,5 +72,11 @@ a:link {
   
   a:active {
     background-color: hotpink;
+  }
+  
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
   }
   
