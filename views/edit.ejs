@@ -10,11 +10,12 @@
     <div class="edit-track">
         <form action="/edit/<%= result[0].Id %>" method="post" >
             <h1>Editing Device:  <%= result[0].artist %> <%= result[0].track %></h1> 
-         <input name="model" value="<%= result[0].track %>"><br>
-         <input name="make" value="<%= result[0].artist %>"><br>
-         <input name="price" value="<%= result[0].length %>"><br>
-         <input name="cover" value="<%= result[0].cover %>"><br> 
-        <input type="submit" value="Edit">
+            <input name="track" type="text" value="<%= result[0].track %>"><br>
+            <input name="artist" type="text" value="<%= result[0].artist %>"><br>
+            <input name="length" type="text" value="<%= result[0].length %>"><br>
+            <input name="album" type="text" value="<%= result[0].album %>"><br> 
+            <input name="cover" type="text" value="<%= result[0].cover %>"><br> 
+            <input type="submit" value="Edit">
         </form>
     </div>
 </div>

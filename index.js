@@ -117,5 +117,4 @@ app.get('/Music/:Id', function(req, res){
         console.log(result);
         res.render('theone', {result})   
     });
-
-});
+})
