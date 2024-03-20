@@ -82,10 +82,10 @@ app.post('/add', function(req,res){
     var x = req.body.track
     var y = req.body.artist
     var z = req.body.length
-    var a = req.body.album
+
     var b = req.body.cover
-    let sql = 'UPDATE music SET track = ?, artist = ?, length = ?, album = ?, cover = ? where Id = ?'
-    let query = db.query(sql,[x, y, z, a, b, req.params.id],(err,result) => {
+    let sql = 'UPDATE music SET track = ?, artist = ?, length = ?, cover = ? where Id = ?'
+    let query = db.query(sql,[x, y, z, b, req.params.id],(err,result) => {
         if(err) throw err;
         
         res.redirect('/')  
@@ -100,6 +100,16 @@ app.post('/add', function(req,res){
         if(err) throw err;
         console.log(result);
         res.render('edit', {result})   
+    });
+
+});
+
+app.get('/make/:artist', function(req, res){
+    let sql = 'SELECT * FROM music where artist = ?';
+    let query = db.query(sql, [req.params.artist], (err,result) => {
+        if(err) throw err;
+        console.log(result);
+        res.render('make', {result})   
     });
 
 });
