@@ -8,13 +8,29 @@
 <body>
 <div class="track-container">
     <div class="edit-track">
-        <form action="/edit/<%= result[0].Id %>" method="post" >
+        <form id="editForm" action="/edit/<%= result[0].Id %>" method="post">
             <h1>Editing Device:  <%= result[0].artist %> <%= result[0].track %></h1> 
             <input name="track" type="text" value="<%= result[0].track %>"><br>
             <input name="artist" type="text" value="<%= result[0].artist %>"><br>
-            <input name="length" type="text" value="<%= result[0].length %>"><br>
+            <input id="lengthInput" name="length" type="text" value="<%= result[0].length %>"><br>
             <input name="cover" type="text" value="<%= result[0].cover %>"><br> 
             <input type="submit" value="Edit">
         </form>
     </div>
 </div>
+
+<script>
+document.getElementById("editForm").addEventListener("submit", function(event) {
+    var lengthInput = document.getElementById("lengthInput").value;
+    if (!isNumeric(lengthInput)) {
+        alert("Please enter a valid number for the length.");
+        event.preventDefault();
+    }
+});
+
+function isNumeric(value) {
+    return !isNaN(parseFloat(value)) && isFinite(value);
+}
+</script>
+</body>
+</html>
