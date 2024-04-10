@@ -1,0 +1,13 @@
+The sql table is configured as such:
+create Database E;
+use E;
+CREATE TABLE `music` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `track` varchar(20) DEFAULT NULL,
+  `artist` varchar(30) DEFAULT NULL,
+  `album` varchar(30) DEFAULT NULL,
+  `length` int DEFAULT NULL,
+  `cover` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`Id`));
+
+there is also a sql dump you can use

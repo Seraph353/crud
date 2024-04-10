@@ -53,7 +53,7 @@ app.get('/add', function(req, res){
         res.render('add')
 
 });
-
+// handles the form submission for the add page
 app.post('/add', function(req,res){
     var x = req.body.track
     var y = req.body.artist
@@ -66,7 +66,7 @@ app.post('/add', function(req,res){
         
         res.redirect('/')  
     });
-    
+// shows the page for a specific item    
  })
  app.get('/music/:Id', function(req, res){
     let sql = 'SELECT * FROM music where Id = ?';
